@@ -9,4 +9,8 @@ public class Quote {
     @Id
     private String id;
     private String quote;
+
+    public String getQuote() {
+        return quote;
+    }
 }

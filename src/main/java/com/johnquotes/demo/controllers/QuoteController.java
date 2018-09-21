@@ -21,9 +21,10 @@ public class QuoteController {
     QuoteRepository quoteRepository;
 
     @RequestMapping(value="/randomquote", method = RequestMethod.GET)
-    public Quote randomQuote() {
+    public String randomQuote() {
         List<Quote> quotes = quoteRepository.findAll();
         Random rand = new Random();
-        return quotes.get(rand.nextInt(quotes.size()));
+        Quote quote = quotes.get(rand.nextInt(quotes.size()));
+        return quote.getQuote();
     }
 }
